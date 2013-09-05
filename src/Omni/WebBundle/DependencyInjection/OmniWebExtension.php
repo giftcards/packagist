@@ -17,6 +17,8 @@ class OmniWebExtension extends Extension
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        //$container->setParameter('packagist_web.rss_max_items', $config['rss_max_items']);
+        $container->setParameter('omni_web.stash_protocol', $config['protocol']);
+        $container->setParameter('omni_web.stash_domain', $config['domain']);
+        $container->setParameter('omni_web.stash_port', $config['port']);
     }
 }

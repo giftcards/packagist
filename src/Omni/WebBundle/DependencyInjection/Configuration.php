@@ -26,7 +26,7 @@ class Configuration implements ConfigurationInterface
         );
         
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('stash');
+        $rootNode = $treeBuilder->root('omni_web');
 
         $rootNode
             ->children()
@@ -38,11 +38,20 @@ class Configuration implements ConfigurationInterface
 					->defaultValue('http')
 					->info('Configures the protocol used to communicate with Stash.')
 					->example('http')
+					->isRequired()
+					->cannotBeEmpty()
                 ->end()
                 ->scalarNode('domain')
                     ->defaultValue('stash.localhost')
                     ->info('Domain that Stash uses.')
                     ->example('stash.localhost')
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                ->end()
+                ->integerNode('port')
+                	->defaultNull()
+                	->info('Port that stash is configured on.')
+                	->example('8888')
                 ->end()
             ->end()
         ;
