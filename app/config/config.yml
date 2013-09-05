@@ -98,5 +98,5 @@ hwi_oauth:
 nelmio_solarium: ~
 
 omni_web:
-    protocol: https
+    protocol: ssh
     domain: stash.wolfe.com
