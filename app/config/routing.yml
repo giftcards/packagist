@@ -1,6 +1,10 @@
 _packagist:
     resource: "@PackagistWebBundle/Controller"
     type:     annotation
+    
+omni_packagist:
+    resource: "@OmniWebBundle/Controller"
+    type:     annotation
 
 fos_user_profile:
     resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
