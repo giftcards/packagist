@@ -1,78 +1,81 @@
 {
-    "description": "Package Repository Website",
-    "keywords": ["package", "composer"],
-    "homepage": "http://packagist.org/",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Nils Adermann",
-            "email": "naderman@naderman.de",
-            "homepage": "http://www.naderman.de"
-        },
-        {
-            "name": "Jordi Boggiano",
-            "email": "j.boggiano@seld.be",
-            "homepage": "http://seld.be"
-        }
-    ],
-    "support": {
-          "email": "contact@packagist.org"
-    },
-    "autoload": {
-        "psr-0": { "Packagist": "src/" }
-    },
-    "require": {
-        "php": ">=5.3.3",
-        "symfony/symfony": "2.3.*",
-        "doctrine/orm": "~2.3",
-        "doctrine/doctrine-bundle": "1.2.*",
-        "twig/extensions": "~1.0",
-        "symfony/assetic-bundle": "2.3.*",
-        "symfony/swiftmailer-bundle": "2.3.*",
-        "symfony/monolog-bundle": "~2.4",
-        "sensio/distribution-bundle": "2.3.*",
-        "sensio/framework-extra-bundle": "2.3.*",
-        "sensio/generator-bundle": "2.3.*",
-        "jms/security-extra-bundle": "1.5.*",
-        "jms/di-extra-bundle": "1.4.*",
-
-        "composer/composer": "1.0.x-dev",
-        "friendsofsymfony/user-bundle": "1.*",
-        "hwi/oauth-bundle": "dev-master",
-        "nelmio/solarium-bundle": "1.*",
-        "nelmio/security-bundle": "1.*",
-        "predis/predis": "0.8.*",
-        "snc/redis-bundle": "dev-master",
-        "white-october/pagerfanta-bundle": "1.0.*@dev",
-        "zendframework/zend-feed": "2.0.*",
-        "zendframework/zend-servicemanager": "2.0.*",
-        "zendframework/zend-uri": "2.0.*",
-        "zendframework/zend-version": "2.0.*",
-
-        "kriswallsmith/assetic": "@dev",
-        "pagerfanta/pagerfanta": "@dev"
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
-        ],
-        "post-update-cmd": [
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
-        ]
-    },
-    "extra": {
-        "symfony-app-dir": "app",
-        "symfony-web-dir": "web"
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://packages.zendframework.com/"
-        }
-    ]
+	"description" : "Package Repository Website",
+	"type" : "library",
+	"authors" : [{
+			"name" : "Nils Adermann",
+			"email" : "naderman@naderman.de",
+			"homepage" : "http://www.naderman.de"
+		}, {
+			"name" : "Jordi Boggiano",
+			"email" : "j.boggiano@seld.be",
+			"homepage" : "http://seld.be"
+		}
+	],
+	"keywords" : [
+		"package",
+		"composer"
+	],
+	"homepage" : "http://packagist.org/",
+	"license" : [
+		"MIT"
+	],
+	"require" : {
+		"white-october/pagerfanta-bundle" : "1.0.*@dev",
+		"zendframework/zend-uri" : "2.0.*",
+		"predis/predis" : "0.8.*",
+		"friendsofsymfony/user-bundle" : "1.*",
+		"symfony/swiftmailer-bundle" : "2.3.*",
+		"doctrine/orm" : "~2.3",
+		"zendframework/zend-servicemanager" : "2.0.*",
+		"jms/security-extra-bundle" : "1.5.*",
+		"pagerfanta/pagerfanta" : "@dev",
+		"nelmio/solarium-bundle" : "1.*",
+		"zendframework/zend-version" : "2.0.*",
+		"twig/extensions" : "~1.0",
+		"php" : ">=5.3.3",
+		"symfony/monolog-bundle" : "~2.4",
+		"sensio/distribution-bundle" : "2.3.*",
+		"snc/redis-bundle" : "dev-master",
+		"composer/composer" : "1.0.x-dev",
+		"symfony/symfony" : "2.3.*",
+		"zendframework/zend-feed" : "2.0.*",
+		"kriswallsmith/assetic" : "@dev",
+		"nelmio/security-bundle" : "1.*",
+		"symfony/assetic-bundle" : "2.3.*",
+		"jms/di-extra-bundle" : "1.4.*",
+		"hwi/oauth-bundle" : "dev-master",
+		"sensio/generator-bundle" : "2.3.*",
+		"sensio/framework-extra-bundle" : "2.3.*",
+		"doctrine/doctrine-bundle" : "1.2.*"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"Omni" : "src/",
+			"Packagist" : "src/"
+		}
+	},
+	"support" : {
+		"email" : "contact@packagist.org"
+	},
+	"repositories" : [{
+			"type" : "composer",
+			"url" : "http://packages.zendframework.com/"
+		}
+	],
+	"scripts" : {
+		"post-update-cmd" : [
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+		],
+		"post-install-cmd" : [
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+		]
+	},
+	"extra" : {
+		"symfony-web-dir" : "web",
+		"symfony-app-dir" : "app"
+	}
 }
